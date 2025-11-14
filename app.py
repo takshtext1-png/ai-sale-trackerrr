@@ -23,7 +23,7 @@ scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/au
 import json
 from oauth2client.service_account import ServiceAccountCredentials
 
-service_account_info = json.loads(os.environ["{
+service_account_info = json.loads(os.environ[{
   "type": "service_account",
   "project_id": "ringed-rune-478116-g8",
   "private_key_id": "d5dbc062f39f9d24d109759d9434f4ce22825c3d",
@@ -36,7 +36,7 @@ service_account_info = json.loads(os.environ["{
   "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ai-sales-track%40ringed-rune-478116-g8.iam.gserviceaccount.com",
   "universe_domain": "googleapis.com"
 }
-"])
+])
 credentials = ServiceAccountCredentials.from_json_keyfile_dict(service_account_info, scope)
 client = gspread.authorize(credentials)
 sheet = client.open(GOOGLE_SHEET_NAME).sheet1
