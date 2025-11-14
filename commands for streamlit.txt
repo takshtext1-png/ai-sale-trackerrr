@@ -1,0 +1,7 @@
+perform in anaconda prompt - 
+
+pip install gspread
+
+
+cd "C:\Users\tarse\OneDrive\Desktop\ai sale tracker"
+streamlit run app.py
