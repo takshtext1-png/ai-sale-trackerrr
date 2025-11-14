@@ -14,7 +14,7 @@ import openai
 from datetime import datetime
 
 # --- CONFIGURATION ---
-openai.api_key = "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"  # your OpenAI API key here
+openai.api_key = ""  # your OpenAI API key here
 GOOGLE_SHEET_NAME = "sales_data"
 SERVICE_ACCOUNT_FILE = "client_secret.json"
 
