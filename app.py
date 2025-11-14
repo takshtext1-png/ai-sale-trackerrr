@@ -23,7 +23,10 @@ scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/au
 import json
 from oauth2client.service_account import ServiceAccountCredentials
 
-service_account_info = json.loads(os.environ["GOOGLE_SERVICE_ACCOUNT_JSON"])
+import os, json, base64
+
+raw = os.environ["GOOGLE_SERVICE_ACCOUNT_JSON"]   # Read Base64 secret
+service_account_info = json.loads(base64.b64decode(raw))  # Decode JSON
 credentials = ServiceAccountCredentials.from_json_keyfile_dict(service_account_info, scope)
 client = gspread.authorize(credentials)
 sheet = client.open(GOOGLE_SHEET_NAME).sheet1
